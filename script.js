@@ -1,56 +1,86 @@
-// script.js
-let messageIndex = 0;
-
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
+/* script.js */
+function sayHi() {
+    alert("Hi there! Thanks for visiting my portfolio! 💖");
 }
 
-function highlightLink(href, duration = 3000) {
-  const link = document.querySelector(`a[href="${href}"]`);
-  if (link) {
-      link.classList.add('highlight-effect');
-      setTimeout(() => {
-          link.classList.remove('highlight-effect');
-      }, duration);
-  }
-}
-
-function startTyping() {
-  const messages = [
-      "Hi there! 👋",
-      "I'm a web developer", 
-      "I love creating beautiful things...",
-      "Thanks for visiting my portfolio!",
-      "Want to work together?"
-  ];
-
-  typeWriter(document.getElementById('my-text'), messages[messageIndex], 120);
-  
-  switch(messages[messageIndex]) {
-      case "Want to work together?":
-          highlightLink("webPlayer.html");
-          break;
-      case "I love creating beautiful things...":
-          highlightLink("projects.html");
-          break;
-  }
-  
-  messageIndex = (messageIndex + 1) % messages.length;
-}
-
-// You can also add initialization code here
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded and JS file connected!');
-    // Any code you want to run when page loads
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.flip-container').addEventListener('click', function() {
+        this.querySelector('.flipper').classList.toggle('flipped');
+    });
 });
+
+
+window.onSpotifyWebPlaybackSDKReady = () => {
+    const token = 'YOUR_SPOTIFY_ACCESS_TOKEN';  // Use the token from authentication
+    const player = new Spotify.Player({
+        name: 'My Custom Player',
+        getOAuthToken: cb => { cb(token); },
+        volume: 0.5
+    });
+
+    // Connect the player
+    player.connect().then(success => {
+        if (success) {
+            console.log('Player connected!');
+        }
+    });
+
+    // Handle player state changes
+    player.addListener('player_state_changed', state => {
+        if (!state) return;
+        console.log('Currently playing:', state.track_window.current_track);
+    });
+
+    // Listen for errors
+    player.addListener('initialization_error', ({ message }) => {
+        console.error('Initialization error:', message);
+    });
+
+    player.addListener('authentication_error', ({ message }) => {
+        console.error('Authentication error:', message);
+    });
+
+    player.addListener('account_error', ({ message }) => {
+        console.error('Account error:', message);
+    });
+
+    player.addListener('playback_error', ({ message }) => {
+        console.error('Playback error:', message);
+    });
+
+    // When the player is ready
+    player.addListener('ready', ({ device_id }) => {
+        console.log('Ready with Device ID:', device_id);
+        // Transfer playback to this device
+        fetch('https://api.spotify.com/v1/me/player', {
+            method: 'PUT',
+            headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ device_ids: [device_id], play: true })
+        });
+    });
+};
+
+
+
+fetch(`https://api.spotify.com/v1/me/player/play`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        uris: ['spotify:track:TRACK_ID']  // Replace with a valid Spotify track URI
+    })
+});
+
+
+
+async function getProfile(accessToken) {
+    let accessToken = localStorage.getItem('access_token');
+  
+    const response = await fetch('https://api.spotify.com/v1/me', {
+      headers: {
+        Authorization: 'Bearer ' + accessToken
+      }
+    });
+  
+    const data = await response.json();
+  }
+  
