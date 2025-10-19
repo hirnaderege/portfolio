@@ -1,0 +1,60 @@
+<!-- stuff.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/cupcake.png" class="icon">
+    <title>hirnaDerege.com</title>
+
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+<body>
+    
+    <!-- my player -->
+    <div class="player">
+
+        <div class="track-info">
+            <img id="album-art" src="images/_ (1).jpeg" alt="Album Art">
+            <div>
+                <h2 id="track-title">Track Title</h2>
+                <p id="artist-name">Artist Name</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prev-btn">⏮</button>
+            <button id="play-btn">▶</button>
+            <button id="pause-btn">⏸</button>
+            <button id="next-btn">⏭</button>
+        </div>
+    </div>
+    
+    <!-- import web api? -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="script.js"></script>
+
+
+    <!-- embedded spotify bubble -->
+    <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/playlist/0jczm4MRysZreqpsANRL2c?utm_source=generator" 
+    width="50%" 
+    height="176" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy"></iframe>
+
+
+    <!-- nav bar -->
+    <div class="topnav">
+        <nav>
+            <a href="webPlayer.html"> contactMe </a>
+            <a href="projects.html"> projects </a> 
+            <a href="home2.html"> home </a> 
+
+        </nav>
+    </div>
+</body>
+</html>
+

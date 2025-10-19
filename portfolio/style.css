@@ -1,0 +1,162 @@
+/* body */
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    background-color: #ffe4e1;
+    color: #ff69b4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 60px;
+}
+
+
+
+/* profile picture */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff69b4;
+    margin-top: 50px;
+}
+
+
+/* coins */
+.smiski-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff69b4;
+    margin-top: 50px;
+}
+
+section {
+    padding: 20px;
+}
+
+
+/* background */
+.btn {
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* nav bar */
+.btn:hover {
+    background-color: #ff1493;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffb6c1;
+    padding: 10px;
+    overflow: hidden;
+} 
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 1 10px;
+}
+ 
+nav a:hover {
+    background-color: #ffb6c1;
+    color: #ff1493;
+}
+
+nav .icon {
+    display: none;
+}
+
+
+/* news reel: me me me */
+.news-ticker {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffe4e1;
+    color: #ff1493;
+    padding: 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 50px;
+    bottom: 10px;
+}
+
+.ticker-content {
+    display: flex;
+    gap: 25px;
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+
+/* isolate player features */
+body {
+    /*font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;*/
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.player {
+    background: #de5499;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #264143
+}
+
+.track-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+
+.controls button {
+    font-size: 15px;
+    background: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.controls button:hover {
+    background: #fdeeee;
+}
+
+
