@@ -1,160 +1,116 @@
-/* STYLE SECTIONING TAGS */
-* { /* Reset the space of the webpage */
-    margin: 0px;
-    padding: 0px;
- }
- 
- body {
-  background-color: rgb(252, 253, 194); 
-   box-sizing: border-box;
-  font-family: initial;
-  text-align: center;
-  padding: 14px 16px;
- }
- 
- 
- /* STYLE TEXT */
- 
- h1 {
-   color: rgb(109, 67, 4);
-   text-align: center;
-   padding: 14px 16px;
- }
- 
- h2{
- color:  rgb(109, 67, 4);
- text-align: center;
- padding: 14px 16px;
- }
- 
- .titleOne{
-   text-align: left;
-   padding-top: 1em;
-   padding-bottom: 1em;
-   padding: 14px 16px;
- }
- 
- h3 {
-   color: rgb(146, 88, 1);
-   text-align: center;
- }
- 
- 
- h4 {
-   color: rgb(146, 88, 1);
-   text-align: center;
-   padding-bottom: 1em;
- }
- 
- p{
-   color: rgb(146, 88, 1);
-   text-align: center;
-   padding: 14px 16px;
- }
- /* STYLE IMAGES */
- /* #beePic {
-   max-height: 200px;
- } */
- 
- #maePic {
-   max-height: 200px;
-   padding: 14px 16px;
-   border-radius: 10%;
- }
- 
- #yo {
-   max-height: 400px;
-   max-width: 400px;
-   padding: 14px 16px;
- }
- 
- /* STYLE NAV BAR */
- /* Add a  background color to the top navigation */
- .topnav {
-   background-color: rgb(196, 174, 103);
-   overflow: hidden;
- }
- 
- /* Style the links inside the navigation bar */
- .topnav a {
-   float: left;
-   display: block;
-   color: #f2f2f2;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-   font-size: 17px;
- }
- 
- /* Change the color of links on hover */
- .topnav a:hover {
-   background-color: rgb(223, 200, 125);
-   color: black;
- }
- 
- /* Hide the link that should open and close the topnav on small screens */
- .topnav .icon {
-   display: none;
- }
- /* STYLE BUTTONS */
- 
- /* ADD MORE! */
- img {
-   display: block;      
-          
-   height: auto;        
-   margin-left: auto;
-   margin-right: auto;
-   
-   /* border-style: solid;
-   border-color: #FF7D00;
-   border-width: 8px;
-   border-radius: 5px; */
- }
- 
- .flex-container {      
-   display: flex;       
-   flex-direction: row; 
-   flex-wrap: nowrap;   
- } 
- .flexboxContainer {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
- }
- .flexItem {
-   flex-basis: 100%;
-   text-align: right;
- }
- 
- .flex-item {           
-   flex-basis: 100%;    
-   margin: 1%;        
- }
- .nav-bar {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   display: flex;
- }
- nav ul li {
-   cursor: pointer;
-   padding: 0;
-   flex: auto;
-   text-align: center;
- }
- nav ul {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   display: flex;
-   justify-content: space-around;
- }
- @media all and (max-width: 600px) {
- nav ul {
- flex-direction: column;
- }
- nav ul li {
- text-align: center;
- }
- }
+/* body */
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    background-color: #e3d7bd;
+    color: #a17d61;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.icon {
+    width: 250px;
+    height: 250px;
+}
+
+.layered-profile {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    height: 250px;
+    background-image: url('images/codeblauw.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    overflow: hidden; /* Clips background to circle */
+    border: 3px solid #a17d61;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .layered-profile:hover {
+    transform: scale(1.05); /* Slightly bigger on hover */
+    box-shadow: 0 8px 20px rgba(161, 125, 97, 0.4); /* Glowing shadow */
+    border-color: #8b6f47; /* Slightly darker border */
+}
+
+.layered-profile:active {
+    transform: scale(0.98); /* Slightly smaller when clicked */
+}
+  
+  .profile-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+/* .topnav bar */
+.btn:hover {
+    background-color: #a17d61;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    width: calc(100% - 40px);
+    background-color: #e3d7bd;
+    padding: 10px;
+    overflow: hidden;
+} 
+
+.topnav a {
+    float: right;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 1 30px;
+    padding: 1px px;
+
+}
+
+.topnav a:hover,
+.topnav a.highlight-effect{
+    background-color: #e3d7bd;
+    color: #a17d61;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* news reel: me me me */
+.news-ticker {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #e3d7bd;
+    color: #a17d61;
+    padding: 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 50px;
+    bottom: 10px;
+}
+
+.ticker-content {
+    display: flex;
+    gap: 25px;
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
