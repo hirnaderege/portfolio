@@ -8,13 +8,20 @@ body {
     padding: 0;
 }
 
-body {
-    padding-top: 60px;
+a.body {
+    color: #a17d61;         /* same as your text color */
+    text-decoration: none;  /* removes underline */
+    font-size: 1.2em;       /* optional: make links a bit larger */
+    margin: 0 10px;         /* spacing between links */
 }
 
-.icon {
-    width: 250px;
-    height: 250px;
+a.body:hover {
+    color: #7a5d45;         /* darker color when hovered */
+    text-decoration: underline; /* show underline on hover */
+}
+
+body {
+    padding-top: 60px;
 }
 
 .layered-profile {
@@ -23,9 +30,6 @@ body {
     left: 10px;
     width: 250px;
     height: 250px;
-    background-image: url('images/codeblauw.jpg');
-    background-size: cover;
-    background-position: center;
     border-radius: 50%;
     overflow: hidden; /* Clips background to circle */
     border: 3px solid #a17d61;
@@ -53,6 +57,15 @@ body {
     border-radius: 50%;
     object-fit: cover;
   }
+
+  .right-image {
+    position: fixed;       /* stays in place when scrolling */
+    right: 0px;           /* distance from right edge */
+    bottom: 0px;          /* distance from bottom edge */
+    width: 350px;          /* adjust size */
+    border-radius: 15px;   /* optional rounded corners */
+}
+
 
 /* .topnav bar */
 .btn:hover {
@@ -113,4 +126,73 @@ body {
 @keyframes ticker {
     from { transform: translateX(0); }
     to { transform: translateX(-100%); }
+}
+
+/* flippers */
+.flip-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    gap: 30px;
+    margin: 50px atuo;
+    perspective: 1000px;
+    justify-content: center;
+    max-width: 1500px;
+}
+
+.flip-card {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card-front {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.flip-card-back {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.smiski-pic {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.flip-text {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: #a17d61;
 }

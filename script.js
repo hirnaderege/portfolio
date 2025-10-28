@@ -28,20 +28,20 @@ function highlightLink(href, duration = 3000) {
 
 function startTyping() {
   const messages = [
-      "Hi there! 👋",
-      "I'm a web developer", 
-      "I love creating beautiful things...",
-      "Thanks for visiting my portfolio!",
-      "Want to work together?"
+      "hello!!",
+      "i'm hirna derege", 
+      "i love making cool things...",
+      "thank you for visiting my portfolio!!",
+      "want to work together?"
   ];
 
   typeWriter(document.getElementById('my-text'), messages[messageIndex], 120);
   
   switch(messages[messageIndex]) {
-      case "Want to work together?":
+      case "want to work together?":
           highlightLink("webPlayer.html");
           break;
-      case "I love creating beautiful things...":
+      case "i love making cool things...":
           highlightLink("projects.html");
           break;
   }
