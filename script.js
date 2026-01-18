@@ -16,13 +16,14 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-function highlightLink(href, duration = 3000) {
+
+function highlightLink(href, duration = 3500) {
   const link = document.querySelector(`a[href="${href}"]`);
   if (link) {
       link.classList.add('highlight-effect');
-      setTimeout(() => {
-          link.classList.remove('highlight-effect');
-      }, duration);
+      setTimeout(() => { 
+            link.classList.remove('highlight-effect'); }
+        , duration);
   }
 }
 
@@ -39,7 +40,7 @@ function startTyping() {
   
   switch(messages[messageIndex]) {
       case "want to work together?":
-          highlightLink("webPlayer.html");
+          highlightLink("contactME.html");
           break;
       case "i love making cool things...":
           highlightLink("projects.html");

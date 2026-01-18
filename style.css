@@ -6,6 +6,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    font-size: 1.4em;
 }
 
 a.body {
@@ -99,6 +100,23 @@ body {
     color: #a17d61;
 }
 
+/*
+@keyframes blink {
+    0%,
+    100% {
+        background-color: #e3d7bd;
+    }
+
+    50% {
+        background-color: #a17d61;
+    }
+}
+.topnav a:hover,
+.topnav a.blinking-effect {
+    animation: blink 1s linear infinite;
+}
+*/
+
 .topnav .icon {
     display: none;
 }
@@ -110,11 +128,12 @@ body {
     width: 100%;
     background-color: #e3d7bd;
     color: #a17d61;
-    padding: 8px 0;
+    padding: 5px 0;
     white-space: nowrap;
     overflow: hidden;
     margin-top: 50px;
     bottom: 10px;
+    font-size: 0.5em;
 }
 
 .ticker-content {
