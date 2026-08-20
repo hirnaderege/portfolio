@@ -1,0 +1,116 @@
+/* body */
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    background-color: #e3d7bd;
+    color: #a17d61;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.icon {
+    width: 250px;
+    height: 250px;
+}
+
+.layered-profile {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    height: 250px;
+    background-image: url('images/codeblauw.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    overflow: hidden; /* Clips background to circle */
+    border: 3px solid #a17d61;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .layered-profile:hover {
+    transform: scale(1.05); /* Slightly bigger on hover */
+    box-shadow: 0 8px 20px rgba(161, 125, 97, 0.4); /* Glowing shadow */
+    border-color: #8b6f47; /* Slightly darker border */
+}
+
+.layered-profile:active {
+    transform: scale(0.98); /* Slightly smaller when clicked */
+}
+  
+  .profile-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+/* .topnav bar */
+.btn:hover {
+    background-color: #a17d61;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    width: calc(100% - 40px);
+    background-color: #e3d7bd;
+    padding: 10px;
+    overflow: hidden;
+} 
+
+.topnav a {
+    float: right;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 1 30px;
+    padding: 1px px;
+
+}
+
+.topnav a:hover,
+.topnav a.highlight-effect{
+    background-color: #e3d7bd;
+    color: #a17d61;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* news reel: me me me */
+.news-ticker {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #e3d7bd;
+    color: #a17d61;
+    padding: 8px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 50px;
+    bottom: 10px;
+}
+
+.ticker-content {
+    display: flex;
+    gap: 25px;
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}

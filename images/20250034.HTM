@@ -1,0 +1,111 @@
+<html>
+<script LANGUAGE="javascript">
+<!--
+var da = (document.all) ? 1 : 0;
+var pr = (window.print) ? 1 : 0;
+var mac = (navigator.userAgent.indexOf("Mac") != -1);
+
+function printPage() {
+  if (pr) // NS4, IE5
+    window.print()
+  else if (da && !mac) // IE4 (Windows)
+    vbPrintPage()
+  else // other browsers
+    alert("Sorry, your browser does not support this feature.");
+  return false;
+}
+
+if (da && !pr && !mac) with (document) {
+  writeln('<OBJECT ID="WB" WIDTH="0" HEIGHT="0" CLASSID="clsid:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>');
+  writeln('<' + 'SCRIPT LANGUAGE="VBScript">');
+  writeln('Sub window_onunload');
+  writeln('  On Error Resume Next');
+  writeln('  Set WB = nothing');
+  writeln('End Sub');
+  writeln('Sub vbPrintPage');
+  writeln('  OLECMDID_PRINT = 6');
+  writeln('  OLECMDEXECOPT_DONTPROMPTUSER = 2');
+  writeln('  OLECMDEXECOPT_PROMPTUSER = 1');
+  writeln('  On Error Resume Next');
+  writeln('  WB.ExecWB OLECMDID_PRINT, OLECMDEXECOPT_DONTPROMPTUSER');
+  writeln('End Sub');
+  writeln('<' + '/SCRIPT>');
+}
+
+// end -->
+</script>
+
+<head>
+<title> Maintenance Request</title>
+</head>
+
+<body BGCOLOR="#FFFFFF">
+
+<FORM NAME="MPCWO">
+
+<p ALIGN="CENTER"><FONT SIZE=4 COLOR=BLUE>Maintenance Request Form</FONT><P>
+<p ALIGN="CENTER"><INPUT TYPE="BUTTON" NAME="PRINT"  VALUE="Print" SIZE="13" ONCLICK="return printPage()">
+<HR>
+  <table width="700">
+    <tr VALIGN="top">
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066 SIZE=4>WO #: </strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT SIZE=4>2025003433</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Date Submitted:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>2024-09-22</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Type of Request:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>NEW</FONT></td>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Status:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>CL</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Completion Date:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>2024-09-23</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Priority:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>URGE</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Planned Date:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>&nbsp;</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Issued To:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>ROWE, Brian</FONT></td>
+    </tr>
+    <tr VALIGN="top">
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Submitted By:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>ETHAN IMPERIO</FONT></td>
+    </tr>
+    <tr>
+      <td ALIGN="right" width="150"><strong><FONT COLOR=#000066>Equipment:</strong></FONT></td>
+      <td width="10">
+      <td ALIGN="left"><FONT COLOR=black>CHDN-130 - Mail Room</FONT></td>
+    </tr>
+  </table>
+
+  <p><FONT COLOR=#000066><strong>Work Request Description:</strong></FONT></p>
+  <p ALIGN="left"><FONT COLOR=black>Alexis Fryar's mail key is not unlocking her mailbox. Her mailbox number is 83. </FONT></p>
+  <p><strong><FONT COLOR=#000066>Closing Comments:</strong></FONT></p>
+  <p ALIGN="left"><FONT COLOR=black>Comments from ROWE, Brian on Sep 23 at 08:34AM: Replaced the lock and stamped new keys.  Filled out the paperwork and left the keys with the front desk.</FONT></p>
+<HR>
+<FONT COLOR=black>
+This form was generated on 2024-09-23 at 14:00:57 by CNERGER.
+</FONT>
+</form>
+</body>
+</html>
