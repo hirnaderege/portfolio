@@ -9,7 +9,7 @@ export default function ProjectsPage() {
       <div className="flip-container">
         <div className="flipper">
           <FlipCard
-            image="images/subset/_ (1).jpeg"
+            image="images/subset/green.jpeg"
             alt="lock-free GPU memory allocator!"
             text="Slab-based GPU Memory Allocation!"
             href="https://github.com/hirnaderege/research"
