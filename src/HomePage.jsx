@@ -41,7 +41,7 @@ export default function HomePage({ onHighlight }) {
         <>
         <header> welcome to my portfolio </header>
         <div className="layered-profile" onClick={startTyping}>
-            <img src="images/mememe.jpeg" alt="Profile" className="profile-overlay" />
+            <img src="images/subset/mememe.jpeg" alt="Profile" className="profile-overlay" />
         </div>
 
         <h1 id="my-text">{displayedText}</h1>
