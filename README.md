@@ -1,6 +1,3 @@
-
-
-Portfolio readme · MD
 # hirnaDerege.com 🍮
  
 > my corner of the internet — built from scratch, deployed live
