@@ -7,7 +7,6 @@ export default function ProjectsPage() {
       <p>my digital net worth ( °ㅁ°) !!</p>
 
       <div className="flip-container">
-        <div className="flipper">
           <FlipCard
             image="images/subset/green.jpeg"
             alt="lock-free GPU memory allocator!"
@@ -32,7 +31,6 @@ export default function ProjectsPage() {
             text="GPU Allocator Visualizer ✨"
             href="/visualizer/main.html"
           />
-        </div>
       </div>
     </>
   );
