@@ -29,7 +29,7 @@ export default function ProjectsPage() {
             image="images/subset/823122da-287c-4ed8-b6db-07a7bda064c3.jpeg"
             alt="GPU allocator visualizer"
             text="GPU Allocator Visualizer ✨"
-            href="/public/visualizer/main.html"
+            href="https://hirnaderege.github.io/portfolio/visualizer/main.html"
           />
       </div>
     </>
