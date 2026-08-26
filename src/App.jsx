@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './HomePage.jsx';
 import ProjectsPage from './ProjectsPage.jsx';
 import ContactPage from './ContactPage.jsx';
+import VisualizerPage from './VisualizerPage.jsx';
 
 export default function App() {
   const [highlightHref, setHighlightHref] = useState(null);
@@ -18,27 +19,20 @@ export default function App() {
         <Route path="/" element={<HomePage onHighlight={handleHightlight} />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/visualizer" element={<VisualizerPage />} />
       </Routes>
 
       <div className="topnav">
         <nav>
-          
-          <Link 
-            to="/contact"
-            className={highlightHref === '/contact' ? 'highlight-effect' : '' }
-          >
-            contactMe
+          <Link to="/" className={highlightHref === '/' ? 'highlight-effect' : ''}>
+            home
           </Link>
-
-          <Link 
-          to="/projects"
-          className={highlightHref === '/projects' ? 'highlight-effect' : '' }
-          >
+          <Link to="/projects" className={highlightHref === '/projects' ? 'highlight-effect' : ''}>
             projects
           </Link>
-
-          <Link to="/">home</Link>
-
+          <Link to="/contact" className={highlightHref === '/contact' ? 'highlight-effect' : ''}>
+            contactMe
+          </Link>
         </nav>
       </div>
 

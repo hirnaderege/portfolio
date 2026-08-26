@@ -1,24 +1,23 @@
 :root {
-  --paper: #EDE0C4;
-  --paper-deep: #E3D3AC;
+  --paper: #e3d7bd;
+  --paper-deep: #d4c9a8;
   --ink: #2E2116;
   --ink-soft: #5A4A38;
 
   --die-bg: #14120F;
   --die-line: #2B271F;
 
-  --alloc: #E8A33D;
-  --alloc-glow: rgba(232, 163, 61, 0.55);
-  --retry: #C1502E;
-  --retry-glow: rgba(193, 80, 46, 0.65);
-  --thread: #6E9C89;
-  --playhead: #F4EFE3;
+  --alloc: #a17d61;
+  --alloc-glow: rgba(161, 125, 97, 0.55);
+  --retry: #7a5d45;
+  --retry-glow: rgba(122, 93, 69, 0.65);
+  --thread: #8b6f47;
+  --playhead: #e3d7bd;
 
   --font-display: Impact, 'Arial Narrow Bold', sans-serif;
-  --font-body: 'Quicksand', sans-serif;
+  --font-body: Impact, 'Arial Narrow Bold', sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
-
 * { box-sizing: border-box; }
 
 body {
