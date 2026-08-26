@@ -50,7 +50,42 @@ export default function HomePage({ onHighlight }) {
             <p>hi! i am a computer science student at Seattle University</p>
             <p>and am hoping to find work in healthcare technology but am open to anything!</p>
             <p>feel free to look around and poke things &lt;3</p>
+
+            <a
+            href="resume.pdf"
+            download="HirnaDerege_Resume.pdf"
+            className="resume-btn"
+            >
+            download resume ↓
+            </a>
+
+            <section className="skills-section">
+                <h2 className="skills-title">things i know ( ˶ˆᗜˆ˵ )</h2>
+                <div className="skills-grid">
+                    {[
+                    { name: "React", emoji: "⚛️" },
+                    { name: "C++", emoji: "⚙️" },
+                    { name: "CUDA", emoji: "🖥️" },
+                    { name: "Python", emoji: "🐍" },
+                    { name: "TypeScript", emoji: "📘" },
+                    { name: "React Native", emoji: "📱" },
+                    { name: "Node.js", emoji: "🟢" },
+                    { name: "Git", emoji: "🌿" },
+                    { name: "Java", emoji: "☕" },
+                    { name: "SQL", emoji: "🗄️" },
+                    ].map((skill) => (
+                    <div key={skill.name} className="skill-chip">
+                        <span className="skill-emoji">{skill.emoji}</span>
+                        <span>{skill.name}</span>
+                    </div>
+                    ))}
+                </div>
+            </section>
+
         </section>
+
+
+
 
         </>
     )

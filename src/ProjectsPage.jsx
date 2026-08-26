@@ -9,28 +9,24 @@ export default function ProjectsPage() {
       <div className="flip-container">
           <FlipCard
             image="images/subset/green.jpeg"
-            alt="lock-free GPU memory allocator!"
-            text="Slab-based GPU Memory Allocation!"
-            href="https://github.com/hirnaderege/research"
+            alt="lock-free GPU memory allocator"
+            text="slab-based GPU memory allocator + visualizer! ⊹ ࣪ ˖"
+            href="/portfolio/#/visualizer"
+            newTab={false}
+            repoHref="https://github.com/hirnaderege/research"
           />
           <FlipCard
             image="images/subset/036fb4a6-660a-46ea-be7e-e0b9f9b8fc79.jpeg"
-            alt="safeChart!"
-            text="GPS app that takes elevation into account — anthill ✨"
-            href="https://github.com/hirnaderege/anthill"
+            alt="anthill GPS app"
+            text="GPS app that takes elevation into account  ⭑.ᐟ anthill .ᐟ⭑"
+            href="https://hirnaderege.github.io/anthill/"
+            repoHref="https://github.com/hirnaderege/anthill"
           />
           <FlipCard
             image="images/subset/54e20151-db2d-43b1-b7b0-7a167ea548e9.jpeg"
             alt="smiski"
-            text="LeetCode Stats!!! ✨"
+            text=" 𑣲⋆｡˚leetcode ˚｡⋆𑣲 "
             href="https://github.com/hirnaderege/myLeetcode"
-          />
-          <FlipCard
-            image="images/subset/823122da-287c-4ed8-b6db-07a7bda064c3.jpeg"
-            alt="GPU allocator visualizer"
-            text="GPU Allocator Visualizer ✨"
-            href="/#/visualizer"
-            target="_self"
           />
       </div>
     </>

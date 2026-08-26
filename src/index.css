@@ -64,6 +64,7 @@ a.body:hover {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: right center;
 }
 
 .right-image {
@@ -204,10 +205,99 @@ a.body:hover {
   text-align: center;
   font-weight: bold;
   color: var(--ink);
+  text-decoration: none;
+  margin: 0;
+}
+
+.flip-btn {
+  background-color: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.6em;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  transition: background-color 0.2s ease;
+}
+
+.flip-btn:hover {
+  background-color: var(--ink-soft);
+}
+
+.flip-btn-secondary {
+  background-color: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
 }
 
 .shake-on-hover:hover {
   animation: shake 0.5s infinite;
+}
+
+.flip-btn-secondary:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.resume-btn {
+  display: inline-block;
+  background-color: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 12px 28px;
+  border-radius: 999px;
+  margin-top: 16px;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-display);
+}
+
+.resume-btn:hover {
+  background-color: var(--ink-soft);
+}
+
+.skills-section {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.65em;
+  font-family: var(--font-display);
+  color: var(--ink);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-chip:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.skill-emoji {
+  font-size: 1.1em;
 }
 
 @keyframes shake {

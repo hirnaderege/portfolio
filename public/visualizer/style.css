@@ -22,9 +22,9 @@
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--playhead);
   color: var(--ink);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   padding: 0 0 80px;
 }
 
@@ -348,4 +348,39 @@ main {
 
 @media (prefers-reduced-motion: reduce) {
   .back-pill, .trace-btn, .transport-btn { transition: none; }
+}
+
+@media (max-width: 768px) {
+  .hero { margin: 60px auto 20px; padding: 0 16px; }
+  .title { font-size: 2.4rem; }
+  .dek { font-size: 0.9rem; }
+  .trace-picker { flex-direction: column; align-items: center; }
+  .summary-grid { grid-template-columns: 1fr; }
+  main { padding: 0 16px; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    margin: 40px auto 20px;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+  .dek {
+    font-size: 0.9rem;
+  }
+  .trace-picker {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding: 0 16px;
+  }
+  #die-canvas {
+    height: 180px;
+  }
 }
