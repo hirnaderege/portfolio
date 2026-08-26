@@ -4,7 +4,7 @@ export default function ContactPage() {
       <h2>get in touch!</h2>
 
       <img
-        src="/public/images/subset/cupcake.png"
+        src="images/subset/cupcake.png"
         alt="Description"
         className="right-image shake-on-hover"
       />
