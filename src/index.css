@@ -8,6 +8,15 @@
 
 * { box-sizing: border-box; }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
 body {
   font-family: var(--font-display);
   background-color: var(--paper);
@@ -33,6 +42,7 @@ a.body:hover {
   text-decoration: underline;
 }
 
+/* profilepic */
 .layered-profile {
   position: relative;
   width: 250px;
@@ -79,13 +89,17 @@ a.body:hover {
   background-color: var(--ink);
 }
 
+/* navbar */
 .topnav {
   position: fixed;
   top: 0;
   right: 0;
+  left: 0;
   background-color: var(--paper);
   padding: 10px 16px;
   z-index: 100;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .topnav nav {
@@ -110,6 +124,7 @@ a.body:hover {
   display: none;
 }
 
+/* ticker */
 .news-ticker {
   position: fixed;
   bottom: 10px;
@@ -139,6 +154,7 @@ a.body:hover {
   to { transform: translateX(-100%); }
 }
 
+/* flipcards */
 .flip-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
@@ -239,6 +255,7 @@ a.body:hover {
   color: var(--paper);
 }
 
+/* resume */
 .resume-btn {
   display: inline-block;
   background-color: var(--ink);
@@ -256,6 +273,7 @@ a.body:hover {
   background-color: var(--ink-soft);
 }
 
+/* skills */
 .skills-section {
   margin: 40px auto;
   max-width: 600px;
@@ -298,6 +316,97 @@ a.body:hover {
 
 .skill-emoji {
   font-size: 1.1em;
+}
+
+/* emailme */
+.dodge-wrapper {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: 240px;
+  width: 400px;
+  position: relative;
+  overflow: visible;
+  z-index: 20;
+}
+
+.dodge-btn:hover {
+  background-color: var(--ink-soft);
+  color: var(--paper);
+}
+
+.dodge-hint {
+  font-size: 0.6em;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.dodge-btn {
+  background-color: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 0.65em;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.dodge-btn:hover {
+  background-color: var(--ink-soft);
+}
+
+/* footer */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px 80px;
+  margin-top: 60px;
+  border-top: 2px solid rgba(161, 125, 97, 0.2);
+  font-size: 0.55em;
+}
+
+.footer-name {
+  font-size: 1.4em;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+}
+
+.footer-links a {
+  color: var(--ink);
+}
+
+.footer-links span {
+  color: var(--ink-soft);
+}
+
+.footer-year {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.page-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.page-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes shake {
