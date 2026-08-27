@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Thread-Safe GPU Allocator — Live Trace </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<header class="hero">
+  <p class="eyebrow">concurrency trace replay</p>
+  <h1 class="title">THE ALLOCATOR,<br>LIVE</h1>
+  <p class="dek">
+    A thread-safe slab allocator I built in C++/CUDA for a faculty-led research project,
+    replayed from its own execution trace. Every gold flash is a real memory slab
+    changing hands across thousands of concurrent GPU threads. Every red flash is a
+    thread that lost the race for one.
+  </p>
+</header>
+
+<main>
+
+  <section class="trace-picker" aria-label="Choose a trace">
+    <button class="trace-btn" data-trace="trace32">
+      <span class="trace-btn-n">128</span>
+      <span class="trace-btn-label">threads</span>
+    </button>
+    <button class="trace-btn" data-trace="trace64">
+      <span class="trace-btn-n">512</span>
+      <span class="trace-btn-label">threads</span>
+    </button>
+    <button class="trace-btn" data-trace="trace256">
+      <span class="trace-btn-n">4,096</span>
+      <span class="trace-btn-label">threads</span>
+    </button>
+  </section>
+
+  <section class="die-panel" aria-label="Memory slab visualization">
+    <div class="die-readout">
+      <div class="readout-item">
+        <span class="readout-label">t</span>
+        <span class="readout-value" id="readout-t">0</span>
+        <span class="readout-max" id="readout-tmax">/ 0</span>
+      </div>
+      <div class="readout-item">
+        <span class="readout-label">occupied</span>
+        <span class="readout-value" id="readout-occ">0</span>
+        <span class="readout-max" id="readout-occmax">/ 0 slabs</span>
+      </div>
+      <div class="readout-item">
+        <span class="readout-label">contention</span>
+        <span class="readout-value" id="readout-contention">0%</span>
+      </div>
+    </div>
+
+    <canvas id="die-canvas"></canvas>
+
+    <div class="strip-label">
+      <span>thread activity</span>
+      <span class="strip-legend">
+        <span class="legend-dot legend-alloc"></span> active
+        <span class="legend-dot legend-retry"></span> retry
+      </span>
+    </div>
+    <canvas id="strip-canvas"></canvas>
+  </section>
+
+  <section class="transport" aria-label="Playback controls">
+    <button id="btn-restart" class="transport-btn" title="Restart">⟲</button>
+    <button id="btn-play" class="transport-btn transport-btn-main" title="Play / Pause">▶</button>
+    <input id="scrub" type="range" min="0" max="1000" value="0" step="1" aria-label="Scrub through trace">
+    <div class="speed-control">
+      <span>speed</span>
+      <button class="speed-btn" data-speed="0.5">0.5×</button>
+      <button class="speed-btn active" data-speed="1">1×</button>
+      <button class="speed-btn" data-speed="4">4×</button>
+      <button class="speed-btn" data-speed="16">16×</button>
+    </div>
+  </section>
+
+  <section class="summary" aria-label="Full-trace summary statistics">
+    <h2 class="summary-title">the full run, at a glance</h2>
+    <p class="summary-note">
+      Playback above replays a representative sample of this trace so it stays smooth
+      in a browser — but the numbers below are computed from every single one of the
+      <span class="mono" id="summary-total-events">—</span> real events this allocator recorded.
+    </p>
+
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <span class="summary-stat-value" id="stat-peak">—</span>
+        <span class="summary-stat-label">peak slabs occupied</span>
+      </div>
+      <div class="summary-stat">
+        <span class="summary-stat-value" id="stat-retries">—</span>
+        <span class="summary-stat-label">total retries</span>
+      </div>
+      <div class="summary-stat">
+        <span class="summary-stat-value" id="stat-contention">—</span>
+        <span class="summary-stat-label">overall contention rate</span>
+      </div>
+    </div>
+
+    <div class="sparkline-block">
+      <div class="sparkline-header"><span>occupancy over time</span></div>
+      <canvas id="spark-occupancy" class="sparkline"></canvas>
+    </div>
+    <div class="sparkline-block">
+      <div class="sparkline-header"><span>retries over time</span></div>
+      <canvas id="spark-retries" class="sparkline"></canvas>
+    </div>
+  </section>
+
+  <section class="colophon">
+    <p>
+      Built on top of a lock-free slab allocator designed to hand out GPU memory to
+      thousands of concurrent threads without a global lock. <code>retry</code> events
+      are threads that hit contention on a slab and had to try again — the metric that
+      matters most for a concurrent allocator under real load.
+    </p>
+    <a href="https://github.com/hirnaderege" class="repo-link" target="_blank" rel="noopener">view the allocator repo →</a>
+  </section>
+
+</main>
+
+<script src="engine.js"></script>
+</body>
+</html>
