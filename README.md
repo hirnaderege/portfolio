@@ -4,7 +4,7 @@
  
 a personal portfolio site i built and maintain myself. started as plain HTML/CSS, migrated to React + Vite, deployed on GitHub Pages.
  
-**[→ visit the site](https://hirnaderege.github.io/portfolio/{target="_blank"})**
+**[→ visit the site](https://hirnaderege.github.io/portfolio/)**
  
 ---
  
