@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <Footer classname="site-footer">
+        <footer className="site-footer">
             <p className="footer-name"> hirna derege </p>
             <p className="footer-links">
                 <a href="https://github.com/hirnaderege" target="_blank" rel="noreferrer">github</a>
@@ -9,7 +9,7 @@ export default function Footer() {
                 <span>·</span>
                 <a href="mailto:hirnadereg@gmail.com">email</a>
             </p>
-            <p className="footer-year"> © 2026 — seattle university cs </p>
-        </Footer>
+            <p className="footer-year"> © 2026 - seattle university cs </p>
+        </footer>
     )
 }

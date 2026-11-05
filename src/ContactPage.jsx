@@ -37,59 +37,57 @@ export default function ContactPage() {
   } // end of catchMe
 
   return (
-    <>
-      <h2>get in touch!</h2>
-
-      <img
-        src="images/subset/cupcake.png"
-        alt="little cupcake girl cutie"
-        className="right-image shake-on-hover"
-      />
-
-      <a 
-      className="body" href="https://www.linkedin.com/in/hirna-derege-399977227/" 
-      target="_blank" 
-      rel="noreferrer"
-      >
-        linkedin
-      </a>
-
-      <a 
-      className="body" 
-      href="https://www.github.com/hirnaderege" 
-      target="_blank" 
-      rel="noreferrer"
-      >
-        github
-      </a>
-
-      <div 
-        className="dodge-wrapper"
-        onMouseMove={dodge}
-      >
-
-        <p className="dodge-hint">
-          {clicked ? "got me! ✨" : "try to click me >ᴗ<"}
-        </p>
-        <a
-          ref={btnRef}
-          className="dodge-btn"
-          href="mailto:hirnadereg@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-          style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
-          onClick={(e) => {
-            if (!clicked) {
-              e.stopPropagation();
-              setClicked(true);
-              setPos({ x: 0, y: 0 });
-            }
-          }}
-        >
-          email me
-        </a>
+    <div className="contact-page">
+      <div className="contact-header">
+        <p className="contact-eyebrow">get in touch - 2026</p>
+        <h1 className="contact-title">LET'S<br />TALK</h1>
+        <hr className="hero-rule" />
       </div>
 
-    </>
+      <div className="contact-body">
+        <div className="contact-links-block">
+          
+          <a
+            className="contact-link"
+            href="https://www.linkedin.com/in/hirna-derege-399977227/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="contact-link-label">linkedin</span>
+            <span className="contact-link-arrow">→</span>
+          </a>
+
+          <a
+            className="contact-link"
+            href="https://www.github.com/hirnaderege"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="contact-link-label">github</span>
+            <span className="contact-link-arrow">→</span>
+          </a>
+        </div>
+
+        <div className="contact-dodge-block">
+          <p className="contact-dodge-label">
+            {clicked ? 'got me! ✨ check your mail client' : 'try to click me >ᴗ<'}
+          </p>
+          <div className="dodge-wrapper" onMouseMove={dodge}>
+            
+            <a
+              ref={btnRef}
+              className="dodge-btn"
+              href="mailto:hirnadereg@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
+              onClick={() => { setClicked(true); setPos({ x: 0, y: 0 }); }}
+            >
+              email me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
